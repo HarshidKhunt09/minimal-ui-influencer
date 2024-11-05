@@ -17,7 +17,7 @@ import { PostSearch } from '../post-search';
 
 // ----------------------------------------------------------------------
 
-export function BlogView() {
+export function NewsView() {
   const [sortBy, setSortBy] = useState('latest');
 
   const handleSort = useCallback((newSort: string) => {

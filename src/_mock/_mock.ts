@@ -230,3 +230,9 @@ export const _productNames = (index: number) =>
     'Nike React Art3mis',
     'Nike React Infinity Run Flyknit A.I.R. Chaz Bear',
   ][index];
+
+export const _user = {
+  displayName: 'John Doe',
+  email: 'john.doe@example.com',
+  photoURL: '',
+};

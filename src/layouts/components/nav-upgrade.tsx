@@ -1,54 +1,62 @@
-import type { StackProps } from '@mui/material/Stack';
-
 import Box from '@mui/material/Box';
+import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
-import { textGradient } from 'src/theme/styles';
+import { paths } from 'src/routes/paths';
+
+import { _user } from 'src/_mock';
+
+import { Label } from 'src/components/label';
 
 // ----------------------------------------------------------------------
 
-export function NavUpgrade({ sx, ...other }: StackProps) {
+export function NavUpgrade() {
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      flexDirection="column"
-      sx={{ mb: 4, textAlign: 'center', ...sx }}
-      {...other}
+    <Stack
+      sx={{
+        px: 2,
+        py: 5,
+        textAlign: 'center',
+      }}
     >
-      <Typography
-        variant="h6"
-        sx={(theme) => ({
-          ...textGradient(
-            `to right, ${theme.vars.palette.secondary.main}, ${theme.vars.palette.warning.main}`
-          ),
-        })}
-      >
-        More features?
-      </Typography>
-      <Typography variant="body2" sx={{ color: 'text.secondary', mt: 0.5 }}>
-        {`From only `}
-        <Box component="strong" sx={{ color: 'text.primary' }}>
-          $69
+      <Stack alignItems="center">
+        <Box sx={{ position: 'relative' }}>
+          <Avatar src={_user.photoURL} alt={_user.displayName} sx={{ width: 48, height: 48 }}>
+            {_user.displayName.charAt(0).toUpperCase()}
+          </Avatar>
+
+          <Label
+            color="success"
+            variant="filled"
+            sx={{
+              top: -6,
+              px: 0.5,
+              left: 40,
+              height: 20,
+              position: 'absolute',
+              borderBottomLeftRadius: 2,
+            }}
+          >
+            Influencer
+          </Label>
         </Box>
-      </Typography>
 
-      <Box
-        component="img"
-        alt="Minimal dashboard"
-        src="/assets/illustrations/illustration-dashboard.webp"
-        sx={{ width: 200, my: 2 }}
-      />
+        <Stack spacing={0.5} sx={{ mb: 2, mt: 1.5, width: 1 }}>
+          <Typography variant="subtitle2" noWrap>
+            {_user.displayName}
+          </Typography>
 
-      <Button
-        href="https://material-ui.com/store/items/minimal-dashboard/"
-        target="_blank"
-        variant="contained"
-        color="inherit"
-      >
-        Upgrade to Pro
-      </Button>
-    </Box>
+          <Typography variant="body2" noWrap sx={{ color: 'text.disabled' }}>
+            {_user.email}
+          </Typography>
+        </Stack>
+
+        <Button variant="contained" href={paths.profile} target="_blank" rel="noopener">
+          Profile
+        </Button>
+      </Stack>
+    </Stack>
   );
 }
