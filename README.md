@@ -2,6 +2,10 @@
 
 Minimal UI - Influencer
 
+## 📝 Note
+
+I'm using React.js to build this project. According to the provided test task, it requires Next.js, but there isn't a free Minimal UI repository for Next.js and I think structure is very similar in both. I'm using a different graph for analytics since I couldn't find a graph component in the older version of Minimal UI. I think it's available in the newer version, and building a graph component from scratch would take some time. Aside from this, everything works properly in terms of both functionality and UI.
+
 ## ⚙️ Installation
 
 1. Clone the repository
