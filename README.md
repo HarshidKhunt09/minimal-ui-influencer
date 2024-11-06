@@ -38,7 +38,7 @@ The following environment variables are used in this project:
 - **VITE_API_URL**: Specifies the URL of the API server.
 - **VITE_API_KEY**: Specifies api key of app.
 
-Before running the project, make sure to set these environment variables in a `.env.development` file in the project root directory.
+Before running the project, make sure to set these environment variables in a `.env` file in the project root directory.
 
 ## 🌟 Contribution Guidelines
 
