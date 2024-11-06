@@ -16,7 +16,7 @@ import { SvgColor } from 'src/components/svg-color';
 
 // ----------------------------------------------------------------------
 
-export type PostItemProps = {
+export type ArticleItemProps = {
   id: string;
   title: string;
   coverUrl: string;
@@ -32,27 +32,27 @@ export type PostItemProps = {
   };
 };
 
-export function PostItem({
+export function ArticleItem({
   sx,
-  post,
-  latestPost,
-  latestPostLarge,
+  article,
+  latestArticle,
+  latestArticleLarge,
   ...other
 }: CardProps & {
-  post: PostItemProps;
-  latestPost: boolean;
-  latestPostLarge: boolean;
+  article: ArticleItemProps;
+  latestArticle: boolean;
+  latestArticleLarge: boolean;
 }) {
   const renderAvatar = (
     <Avatar
-      alt={post.author.name}
-      src={post.author.avatarUrl}
+      alt={article.author.name}
+      src={article.author.avatarUrl}
       sx={{
         left: 24,
         zIndex: 9,
         bottom: -24,
         position: 'absolute',
-        ...((latestPostLarge || latestPost) && {
+        ...((latestArticleLarge || latestArticle) && {
           top: 24,
         }),
       }}
@@ -70,13 +70,13 @@ export function PostItem({
         WebkitLineClamp: 2,
         display: '-webkit-box',
         WebkitBoxOrient: 'vertical',
-        ...(latestPostLarge && { typography: 'h5', height: 60 }),
-        ...((latestPostLarge || latestPost) && {
+        ...(latestArticleLarge && { typography: 'h5', height: 60 }),
+        ...((latestArticleLarge || latestArticle) && {
           color: 'common.white',
         }),
       }}
     >
-      {post.title}
+      {article.title}
     </Link>
   );
 
@@ -92,15 +92,15 @@ export function PostItem({
       }}
     >
       {[
-        { number: post.totalComments, icon: 'solar:chat-round-dots-bold' },
-        { number: post.totalViews, icon: 'solar:eye-bold' },
-        { number: post.totalShares, icon: 'solar:share-bold' },
+        { number: article.totalComments, icon: 'solar:chat-round-dots-bold' },
+        { number: article.totalViews, icon: 'solar:eye-bold' },
+        { number: article.totalShares, icon: 'solar:share-bold' },
       ].map((info, _index) => (
         <Box
           key={_index}
           display="flex"
           sx={{
-            ...((latestPostLarge || latestPost) && {
+            ...((latestArticleLarge || latestArticle) && {
               opacity: 0.64,
               color: 'common.white',
             }),
@@ -116,8 +116,8 @@ export function PostItem({
   const renderCover = (
     <Box
       component="img"
-      alt={post.title}
-      src={post.coverUrl}
+      alt={article.title}
+      src={article.coverUrl}
       sx={{
         top: 0,
         width: 1,
@@ -135,13 +135,13 @@ export function PostItem({
       sx={{
         mb: 1,
         color: 'text.disabled',
-        ...((latestPostLarge || latestPost) && {
+        ...((latestArticleLarge || latestArticle) && {
           opacity: 0.48,
           color: 'common.white',
         }),
       }}
     >
-      {fDate(post.postedAt)}
+      {fDate(article.postedAt)}
     </Typography>
   );
 
@@ -156,7 +156,7 @@ export function PostItem({
         bottom: -16,
         position: 'absolute',
         color: 'background.paper',
-        ...((latestPostLarge || latestPost) && { display: 'none' }),
+        ...((latestArticleLarge || latestArticle) && { display: 'none' }),
       }}
     />
   );
@@ -167,7 +167,7 @@ export function PostItem({
         sx={(theme) => ({
           position: 'relative',
           pt: 'calc(100% * 3 / 4)',
-          ...((latestPostLarge || latestPost) && {
+          ...((latestArticleLarge || latestArticle) && {
             pt: 'calc(100% * 4 / 3)',
             '&:after': {
               top: 0,
@@ -178,7 +178,7 @@ export function PostItem({
               bgcolor: varAlpha(theme.palette.grey['900Channel'], 0.72),
             },
           }),
-          ...(latestPostLarge && {
+          ...(latestArticleLarge && {
             pt: {
               xs: 'calc(100% * 4 / 3)',
               sm: 'calc(100% * 3 / 4.66)',
@@ -194,7 +194,7 @@ export function PostItem({
       <Box
         sx={(theme) => ({
           p: theme.spacing(6, 3, 3, 3),
-          ...((latestPostLarge || latestPost) && {
+          ...((latestArticleLarge || latestArticle) && {
             width: 1,
             bottom: 0,
             position: 'absolute',
