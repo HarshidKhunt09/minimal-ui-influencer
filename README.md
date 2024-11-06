@@ -1,48 +1,70 @@
-## Minimal UI ([Free version](https://free.minimals.cc/))
+## 🚀 Project Name
 
-![license](https://img.shields.io/badge/license-MIT-blue.svg)
+Minimal UI - Influencer
 
-![preview](public/assets/images/minimal-free-preview.jpg)
+## ⚙️ Installation
 
-> Free React Admin Dashboard made with Material-UI components and React + Vite.js.
+1. Clone the repository
 
-## Pages
+```
+git clone https://github.com/HarshidKhunt09/minimal-ui-influencer.git
+```
 
-- [Dashboard](https://free.minimals.cc/)
-- [Users](https://free.minimals.cc/user)
-- [Products](https://free.minimals.cc/products)
-- [Blog](https://free.minimals.cc/blog)
-- [Sign in](https://free.minimals.cc/sign-in)
-- [Not found](https://free.minimals.cc/404)
+2. Navigate to the project directory
 
-## Quick start
+```
+cd minimal-ui-influencer
+```
 
-- Clone the repo: `git clone https://github.com/minimal-ui-kit/material-kit-react.git`
-- Recommended: `Node.js v20.x`
-- **Install:** `npm i` or `yarn install`
-- **Start:** `npm run dev` or `yarn dev`
-- **Build:** `npm run build` or `yarn build`
-- Open browser: `http://localhost:3039`
+3. Install dependencies:
 
-## Upgrade to PRO Version
+```
+npm i
+```
 
-| Minimal Free                | [Minimal Pro](https://material-ui.com/store/items/minimal-dashboard/)                                   |
-| :-------------------------- | :------------------------------------------------------------------------------------------------------ |
-| **6** Pages                 | **70+** Pages                                                                                           |
-| **Partial** theme customize | **Fully** theme customize                                                                               |
-| -                           | **Next.js** version                                                                                     |
-| -                           | **TypeScript** version (Standard Plus and Extended license)                                             |
-| -                           | Design **Figma** file (Standard Plus and Extended license)                                              |
-| -                           | Authentication with **Amplify**, **Auth0**, **JWT**, **Firebase** and **Supabase**                      |
-| -                           | Light/dark mode, right-to-left, form validation... ([+more components](https://minimals.cc/components)) |
-| -                           | Complete users flows                                                                                    |
-| -                           | 1 year of free updates / 6 months of technical support                                                  |
-| -                           | Learn more: [Package & license](https://docs.minimals.cc/package)                                       |
+4. Create `.env` add all environment variables.
+5. Start the development server:
 
-## License
+```
+npm run dev
+```
 
-Distributed under the [MIT](https://github.com/minimal-ui-kit/minimal.free/blob/main/LICENSE.md) license.
+6. Open your browser and go to [http://localhost:3039](http://localhost:3039) to view the app.
 
-## Contact us
+## 📝 Environment Variables
 
-Email: support@minimals.cc
+The following environment variables are used in this project:
+
+- **VITE_API_URL**: Specifies the URL of the API server.
+- **VITE_API_KEY**: Specifies api key of app.
+
+Before running the project, make sure to set these environment variables in a `.env.development` file in the project root directory.
+
+## 🌟 Contribution Guidelines
+
+These are the guidelines to be followed while contributing to this codebase.
+
+### Basic Rules
+
+- Use a semicolon at the end of every statements.
+- DO NOT LEAVE trailing whitespaces at the end of any sentence.
+- whitespace must not be used_inside_parantheses but always put spaces around operators, oprands. and after commas.That affects the readability Example:
+
+```
+for (let i = 0; i < 10; i++) {} ✅
+for(let i=0; i<10; i++){} ❌
+```
+
+- Prefer modern ES functions whenever possible.
+- Prefer hooks as much as possible.
+- ALWAYS use variable with const.
+- Limit the use of nested ternary operators to maintain code readability.
+- Utilize object and array destructuring to simplify code and make it more readable.
+- Prefer using LESS for styling instead of inline styles.
+- Use React Fragments (<>...</>) to group multiple elements without adding an extra node to the DOM.
+- AVOID Using Index as a Key When Mapping Over Arrays, use unique and stable keys when mapping over arrays to improve rendering performance and avoid potential issues with component reordering.
+- When using useEffect hook, make sure to have a cleanup function unless it is not needed.
+- Stay updated with React's official documentation, guidelines, and best practices to leverage the latest features and improvements in React development.
+
+## Thanks
+
